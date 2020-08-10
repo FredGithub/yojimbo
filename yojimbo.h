@@ -367,7 +367,7 @@ template <typename T> void yojimbo_swap( T & a, T & b )
     T tmp = a;
     a = b;
     b = tmp;
-};
+}
 
 /**
     Get the absolute value.
@@ -3625,7 +3625,7 @@ namespace yojimbo
     #define YOJIMBO_VIRTUAL_SERIALIZE_FUNCTIONS()                                                               \
         bool SerializeInternal( class yojimbo::ReadStream & stream ) { return Serialize( stream ); };           \
         bool SerializeInternal( class yojimbo::WriteStream & stream ) { return Serialize( stream ); };          \
-        bool SerializeInternal( class yojimbo::MeasureStream & stream ) { return Serialize( stream ); };         
+        bool SerializeInternal( class yojimbo::MeasureStream & stream ) { return Serialize( stream ); }         
 
     /**
         A reference counted object that can be serialized to a bitstream.

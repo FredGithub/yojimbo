@@ -727,7 +727,7 @@ void yojimbo_printf( int level, const char * format, ... )
 
 #endif // #if YOJIMBO_ENABLE_LOGGING
 
-#if __APPLE__
+#if YOJIMBO_PLATFORM == YOJIMBO_PLATFORM_MAC
 
 // ===============================
 //              MacOS
@@ -763,7 +763,7 @@ double yojimbo_time()
     return ( double( current - start ) * double( timebase_info.numer ) / double( timebase_info.denom ) ) / 1000000000.0;
 }
 
-#elif __linux
+#elif YOJIMBO_PLATFORM == YOJIMBO_PLATFORM_UNIX
 
 // ===============================
 //              Linux
@@ -797,7 +797,7 @@ double yojimbo_time()
     return current - start;
 }
 
-#elif defined(_WIN32)
+#elif YOJIMBO_PLATFORM == YOJIMBO_PLATFORM_WINDOWS
 
 // ===============================
 //             Windows
